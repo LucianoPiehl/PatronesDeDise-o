@@ -1,0 +1,11 @@
+Patron Mediator:
+* El patron Mediator o tambien conocido como Mediador o Intermedary es un patron de diseño de comportamiento que restringelas comunicaciones directas entre los objetos, forzandolos a colaborar unicamente a traves del objeto Mediador.
+Problema:
+Digamos que tenemos una interfaz de usuario en la que existe una comunicacion caotica entre todos los componentes, se entiende..?
+Por ej para iniciar sesion en nuestra cuenta de teams debemos de escribir nuestro gmail y contraseña y luego darle al boton de "aceptar".
+Bien dicho boton tiene que validar si las casilla de gmail y contraseña fueron llenadas para continuar al ser una validacion de usuario sencilla esto no generaria problemas, pero si querriamos reutilizar dicho codigo para otra situacion similar seria complicado por el acomplamiento que tienen los componentes. Esto al ser una interfaz de inicio de sesion es sencillo, pero con interfazes mas grande la comunicacion entre los componentes se volveria demasiado caotica.
+Solucion:
+En situaciones como esta se puede utilizar el patron Mediator ya que sugiere detener toda la comunicacion directa entre los componentes colocando un objeto que trabaje como mediador, de esta forma los componenentes le enviarian un mensaje al mediador y el mediador le enviaria ese mensaje al destino.
+Analogia al mundo real:
+Supongamos que estamos en una reunion con personas que hablan diferentes idiomas... ingles, italiano, chino, frances etc...
+bueno si nosotros tratariamos de hablar con cada uno (suponiendo que cada uno habla unicamente su idioma) seria algo complicado y caotico ya que tendriamos que hablar un idioma diferente para cada uno, ahi es donde entra el objeto mediador o en este caso seria una persona que hable los diferentes idiomas y nosotros le comunicamos nuestro mensaje a la persona mediadora y dicha persona se lo comunica a el destinatario, de este modo viendolo desde una punto de la programacion nosotros nunca interactuamos con otra persona de la sala, el unico con el que nos comunicamos es con la persona que le pasa el mensaje a su destinatario. 
