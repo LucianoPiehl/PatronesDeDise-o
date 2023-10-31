@@ -1,0 +1,21 @@
+Hay una clase ManejadorDeRegalos esta es una clase abstracta que define la interfaz para los manejadores de regalos. Tiene un método procesarRegalo(Regalo regalo) que debe ser implementado por las subclases. En este método, se define la lógica para procesar un regalo, pero en la clase base, no hace nada.
+
+AñadirDedicatoria se extiende ManejadorDeRegalos y representa un manejador concreto en la cadena de responsabilidad. Su función es añadir una dedicatoria al regalo.
+Tiene una referencia al siguiente manejador en la cadena (siguienteManejador) para pasar el regalo a la siguiente etapa una vez que ha añadido la dedicatoria.
+En el método procesarRegalo(Regalo regalo), crea una dedicatoria y la asigna al regalo. Luego, pasa el regalo al siguiente manejador si está configurado. 
+
+AñadirMoño es similar a AñadirDedicatoria, esta clase también extiende ManejadorDeRegalos y se encarga de añadir un moño al regalo.
+Al igual que AñadirDedicatoria, tiene una referencia al siguiente manejador en la cadena para pasar el regalo una vez que ha añadido el moño.
+
+ElegirObjeto se encarga de elegir el objeto que se agregará al regalo. Al igual que las anteriores, extiende ManejadorDeRegalos.
+Tiene una referencia al siguiente manejador en la cadena y, en su método procesarRegalo(Regalo regalo), elige un objeto y lo asigna al regalo.
+
+EnvolverObjeto es responsable de envolver el objeto del regalo en papel de regalo. Al igual que las demás, extiende ManejadorDeRegalos.
+Tiene una referencia al siguiente manejador y, en su método procesarRegalo(Regalo regalo), envuelve el objeto con papel de regalo y establece el estado de envuelto en true.
+
+Regalo representa el regalo en sí y tiene propiedades para almacenar información relacionada con el regalo, como el objeto, el estado de envuelto, la dedicatoria, el moño, etc.
+
+En la clase Main se crea una instancia de cada manejador y se configura la cadena de responsabilidad al establecer las referencias al siguiente manejador.
+Luego, se crea un regalo y se inicia el proceso llamando al método procesarRegalo del primer manejador en la cadena (AñadirDedicatoria).
+Finalmente, se muestra el estado del regalo después de pasar por la cadena de responsabilidad.
+El patrón de Cadena de Responsabilidad permite que cada manejador procese una parte específica de la tarea (agregar dedicatoria, agregar moño, elegir objeto, envolver) y luego pase el regalo al siguiente manejador. Esto se repite hasta que el regalo ha pasado por todos los manejadores y se ha completado. Cada manejador en la cadena es responsable de una acción específica, y la cadena se puede configurar de manera flexible para agregar, eliminar o cambiar el orden de los manejadores según sea necesario.
